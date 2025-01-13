@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/About.css";
-import profileImage from "../assets/react.svg";
+import profileImage from "../assets/2.jpg";
 
 function About() {
     return (

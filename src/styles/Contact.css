@@ -49,5 +49,6 @@ button:hover {
 @media (max-width: 768px) {
     input, textarea {
         font-size: 1rem;
+        width: 300px;
     }
 }
