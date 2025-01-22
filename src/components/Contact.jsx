@@ -14,7 +14,7 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         if (!name || !email || !message) {
             setError("Please fill out all fields.");
             return;
@@ -45,31 +45,33 @@ function Contact() {
     };
 
     return (
-        <section className="contact">
-            <h2>Contact Me</h2>
-            {error && <p className="error">{error}</p>}
-            {isSent && <p className="success">Your message has been sent!</p>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                    type="email"
-                    placeholder="Your Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <textarea
-                    placeholder="Your Message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                />
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+        <div className="contact">
+            <div className="contact-wrapper">
+                <h2>Contact Me</h2>
+                {error && <p className="error">{error}</p>}
+                {isSent && <p className="success">Your message has been sent!</p>}
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <textarea
+                        placeholder="Your Message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
     );
 }
 

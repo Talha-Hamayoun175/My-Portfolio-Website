@@ -1,22 +1,61 @@
-/* Skills Page Styles */
 .skills {
-    padding: 4rem 2rem;
+    padding: 23px 2rem;
     background-color: #fff;
     text-align: center;
-    min-height: calc(100vh + -314px);
+    min-height: calc(100vh + -186px);
+    position: relative;
+}
+
+.skills::before {
+    content: "";
+    background-color: #def7b475;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 50%;
+    top: 0;
+    left: 0;
+    border-radius: 0 100px 100px 0;
+}
+
+@media (max-width: 768px) {
+    .skills {
+        min-height: calc(100vh + -247px);
+    }
+}
+
+.skill-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1;
 }
 
 .skills h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeSlideDown 1s ease-in-out forwards;
 }
 
 .skills-list {
     list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: inline-flex;
     gap: 2rem;
     padding: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1.2s ease-in-out forwards 0.5s;
+}
+
+@media (max-width: 768px) {
+    .skills-list {
+        display: block;
+        gap: 1rem;
+    }
 }
 
 .skills-list li {
@@ -25,10 +64,58 @@
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    margin-bottom: 20px;
+    transform: perspective(500px) rotateY(0deg);
 }
 
 .skills-list li:hover {
-    background-color: #f39c12;
+    background-color: #ff4500;
     color: white;
+    transform: perspective(500px) rotateY(15deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skills h2:hover {
+    color: #ff4500;
+    text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-section.skills-wrap.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInAndRotate 1.5s ease-out;
+}
+
+@keyframes fadeInAndRotate {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) rotateX(30deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
 }

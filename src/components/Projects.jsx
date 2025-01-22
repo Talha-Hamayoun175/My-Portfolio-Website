@@ -6,7 +6,7 @@ import project3 from "../assets/react.svg";
 
 function Projects() {
     return (
-        <section className="projects">
+        <div className="projects">
             <h2>My Projects</h2>
             <div className="project-cards">
                 <div className="project-card">
@@ -25,7 +25,7 @@ function Projects() {
                     <p>Description of project 3...</p>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 

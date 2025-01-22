@@ -1,6 +1,5 @@
-/* Navbar Styles */
 .navbar {
-    background-color: #333;
+    background-color: #444f45;
     color: white;
     padding: 10px 1rem;
     display: flex;
@@ -17,11 +16,12 @@
     }
 }
 
-
 .profile-image {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid hsla(0, 0%, 13%, 0.5);
 }
 
 .navbar-logo {
@@ -47,7 +47,7 @@
 }
 
 .navbar-links a:hover {
-    color: #f39c12;
+    color: #ff4500;
 }
 
 @media (max-width: 768px) {
@@ -55,4 +55,16 @@
         gap: 1rem;
         padding: 0;
     }
+}
+
+.Contact-Us {
+    border: 1px solid #ff4500;
+    background: #ff4500;
+    padding: 0 7px;
+    border-radius: 9px;
+
+}
+
+.Contact-Us a:hover {
+    color: #444f45;
 }

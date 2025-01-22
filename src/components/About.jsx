@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/About.css";
-import profileImage from "../assets/2.jpg";
+import profileImage from "../assets/Talha.jpg";
 
 function About() {
     return (
-        <section className="about">
+        <div className="about">
             <div className="about-container">
                 <img src={profileImage} alt="Profile" className="about-image" />
                 <div className="about-text">
@@ -15,7 +15,7 @@ function About() {
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 

@@ -1,19 +1,43 @@
-/* Contact Page Styles */
 .contact {
-    padding: 5rem 2rem;
+    position: relative;
+    padding: 23px 2rem;
     background-color: #fff;
     text-align: center;
-    min-height: calc(100vh + -314px);
+    min-height: calc(100vh + -186px);
+    animation: fadeIn 1s ease-in-out;
+}
+.contact-wrapper {
+    z-index: 1;
+    position: relative;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    background-color: #def7b475;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    border-radius: 0 100px 100px 0;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        min-height: calc(100vh + -245px);
+    }
 }
 
 .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    animation: slideInFromTop 1s ease-in-out;
 }
 
 form {
     max-width: 600px;
     margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 input, textarea {
@@ -23,32 +47,114 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:hover, textarea:hover {
+    border-color: #ff4500;
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
 }
 
 button {
-    background-color: #f39c12;
+    background-color: #ff4500;
     color: white;
     padding: 1rem;
     border: none;
     border-radius: 5px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #e67e22;
+    background-color: #fd692f;
+    transform: scale(1.05);
 }
 
 .error {
     color: red;
     font-size: 1rem;
     margin-bottom: 1rem;
+    animation: shake 0.5s ease-in-out;
+}
+
+.success {
+    color: green;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
 }
 
 @media (max-width: 768px) {
     input, textarea {
         font-size: 1rem;
         width: 300px;
+    }
+}
+
+.animate-section.contact-wrap.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounceInUp 1.2s ease-out;
+}
+
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

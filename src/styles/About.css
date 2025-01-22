@@ -1,9 +1,27 @@
-/* About Page Styles */
 .about {
     padding: 5rem 2rem;
     background-color: #f4f4f4;
     text-align: center;
     min-height: calc(100vh + -314px);
+    position: relative;
+}
+
+.about::before {
+    content: "";
+    background-color: #def7b475;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 50%;
+    right: 0;
+    top: 0;
+    border-radius: 100px 0 0 100px;
+}
+
+@media (max-width: 768px) {
+    .about {
+        min-height: calc(100vh + -361px);
+    }
 }
 
 .about-container {
@@ -14,6 +32,11 @@
     max-width: 1200px;
     margin: 0 auto;
     flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 .about-image {
@@ -21,6 +44,7 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
+    border: 2px solid hsla(0, 0%, 13%, 0.5);
 }
 
 .about-text h2 {
@@ -42,3 +66,96 @@
         max-width: 500px;
     }
 }
+
+.about-container {
+    perspective: 1000px;
+    z-index: 1;
+}
+
+.about-container:hover .about-image {
+    animation: rotate3D 6s ease-in-out infinite;
+}
+
+.about-image {
+    animation: highlightPulse 1.5s ease-in-out;
+}
+
+.about-image:hover {
+    transform: rotateY(360deg) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    animation: fadeInSlideUp 1.5s ease-out;
+}
+
+.about-text h2:hover {
+    color: #ff4500;
+    text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+    animation: highlightPulse 0.6s ease-in-out;
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes highlightPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-section.about-wrap.active {
+    opacity: 1;
+    transform: translateY(0);
+    animation: popIn 1s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: perspective(1000px) rotateX(30deg) scale(0.6);
+        opacity: 0;
+    }
+    50% {
+        transform: perspective(1000px) rotateX(10deg) scale(0.9);
+        opacity: 0.7;
+    }
+    100% {
+        transform: perspective(1000px) rotateX(0deg) scale(1);
+        opacity: 1;
+    }
+}
+/* 
+.animate-section.about-wrap::before {
+    content: "";
+    background-color: #def7b475;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    width: 20%;
+    right: 0;
+    top: 0;
+    border-radius: 100px 0 0 100px;
+} */
