@@ -68,7 +68,7 @@ function Contact() {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                     />
-                    <button type="submit">Send Message</button>
+                    <button className="btn-holder" type="submit">Send Message</button>
                 </form>
             </div>
         </div>

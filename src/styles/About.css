@@ -2,7 +2,7 @@
     padding: 5rem 2rem;
     background-color: #f4f4f4;
     text-align: center;
-    min-height: calc(100vh + -314px);
+    min-height: calc(100vh + 1px);
     position: relative;
 }
 
@@ -20,7 +20,7 @@
 
 @media (max-width: 768px) {
     .about {
-        min-height: calc(100vh + -361px);
+        min-height: calc(100vh + 95px);
     }
 }
 
@@ -41,10 +41,17 @@
 
 .about-image {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border: 2px solid hsla(0, 0%, 13%, 0.5);
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 .about-text h2 {
@@ -53,8 +60,11 @@
 }
 
 .about-text p {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 14px;
+    color: #000000;
+    white-space: unset;
+    padding: 0 10px;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -63,7 +73,7 @@
     }
 
     .about-text {
-        max-width: 500px;
+        max-width: 600px;
     }
 }
 
@@ -87,6 +97,7 @@
 
 .about-text {
     animation: fadeInSlideUp 1.5s ease-out;
+    padding: 0 30px;
 }
 
 .about-text h2:hover {
@@ -159,3 +170,104 @@
     top: 0;
     border-radius: 100px 0 0 100px;
 } */
+
+.about-info {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.about-info li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.about-info li:last-child {
+    border-bottom: none;
+}
+
+.about-info span:first-child {
+    font-weight: bold;
+    color: #555;
+}
+
+.about-info span:last-child {
+    color: #000;
+    text-align: right;
+}
+
+.about-info li:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+
+.interests-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.interests-list li {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    max-width: 160px;
+    justify-content: center;
+    width: 100%;
+}
+
+.interests-list li:hover {
+    background-color: #ff4500;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.interests-list li i {
+    font-size: 1.5rem;
+    color: #ff4500;
+    transition: color 0.3s;
+}
+
+.interests-list li:hover i {
+    color: white;
+}
+
+.interests-list li span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.interests-list li:hover span {
+    color: white;
+}
+
+.interests-list li svg {
+    color: #444f45;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.interests-list li:hover svg {
+    color: white;
+}

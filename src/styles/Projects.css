@@ -1,7 +1,8 @@
 .projects {
     padding: 5rem 2rem;
     background-color: #f9f9f9;
-    min-height: calc(100vh + -314px);
+    min-height: calc(100vh + -136px);
+
     animation: fadeIn 1s ease-in-out;
     position: relative;
 }

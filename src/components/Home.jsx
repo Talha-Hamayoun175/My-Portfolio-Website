@@ -8,6 +8,8 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Testimonials from "./Testimonials";
 import HeroSection from "./Slider.jsx";
+import Animation from "./Amimation.jsx";
+import Services from "./Services.jsx";
 
 function Home() {
     useEffect(() => {
@@ -23,8 +25,12 @@ function Home() {
                 <img src={heroImage} alt="Hero" className="hero-image" />
             </section> */}
 
-            < HeroSection />
-
+            <section>
+                < HeroSection />
+            </section>
+            <section>
+                < Animation />
+            </section>
             <section className="animate-section about-wrap">
                 <About />
             </section>
@@ -34,11 +40,14 @@ function Home() {
             <section className="animate-section projects-wrap">
                 <Projects />
             </section>
-            <section className="animate-section contact-wrap">
-                <Contact />
-            </section>
             <section className="animate-section textimonials-wrap">
                 < Testimonials />
+            </section>
+            <section className="animate-section services-wrap">
+                < Services />
+            </section>
+            <section className="animate-section contact-wrap">
+                <Contact />
             </section>
         </>
     );

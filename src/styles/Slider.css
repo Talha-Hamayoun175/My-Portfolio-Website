@@ -15,9 +15,10 @@
     transform: translate(0, -50%);
     width: 100%;
 
-    h1, p {
+    h1, span {
         color: white;
         z-index: 1;
+        margin-bottom: 30px;
     }
 }
 
@@ -47,6 +48,8 @@
 .hero-wrap {
     overflow: hidden;
     position: relative;
+    z-index: 1;
+    height: calc(100vh - 85px);
 }
 
 .hero-slider {
@@ -103,4 +106,32 @@
 
 .slick-next {
     right: 10px;
+}
+
+.cv-holder {
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff4500;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+    background-color: #fd692f;
+    color: white;
+}
+
+.download-btn:active {
+    background-color: #fd692f;
+    color: white;
 }

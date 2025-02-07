@@ -46,7 +46,16 @@ const HeroSection = () => {
                     <div key={index} className="hero-slide">
                         <div className="hero-text">
                             <h1>{slide.heading}</h1>
-                            <p>{slide.description}</p>
+                            <span>{slide.description}</span>
+                            <div className="cv-holder">
+                                <a
+                                    href="/TalhaHamayounCV.pdf"
+                                    download="TalhaHamayounCV.pdf"
+                                    className="download-btn"
+                                >
+                                    Download CV
+                                </a>
+                            </div>
                         </div>
                         <img src={slide.src} alt={slide.alt} className="hero-image-slider" />
                     </div>
