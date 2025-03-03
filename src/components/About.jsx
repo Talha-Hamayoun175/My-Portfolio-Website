@@ -13,7 +13,7 @@ function About() {
                 <div className="about-text">
                     <h2>About Me</h2>
                     <p>
-                    A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                    A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth new.
                     </p>
                     <ul className="about-info">
                         <li className="about-flex"><span>Name:</span> <span>Talha Hamayoun</span></li>
